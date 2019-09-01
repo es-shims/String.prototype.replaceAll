@@ -32,5 +32,10 @@
 	"devDependencies": {
 		"@ljharb/eslint-config": "^14.1.0",
 		"eslint": "^6.3.0"
+	},
+	"dependencies": {
+		"es-abstract": "^1.14.1",
+		"function-bind": "^1.1.1",
+		"has-symbols": "^1.0.0"
 	}
 }
