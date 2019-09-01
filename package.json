@@ -1,0 +1,30 @@
+{
+	"name": "string.prototype.replaceall",
+	"version": "0.0.0",
+	"description": "Spec-compliant polyfill for String.prototype.replaceAll ESnext proposal",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/es-shims/String.prototype.replaceAll.git"
+	},
+	"keywords": [
+		"string",
+		"replaceall",
+		"replace",
+		"regex",
+		"all",
+		"es2020",
+		"esnext",
+		"javascript",
+		"spec"
+	],
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/es-shims/String.prototype.replaceAll/issues"
+	},
+	"homepage": "https://github.com/es-shims/String.prototype.replaceAll#readme"
+}
