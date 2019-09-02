@@ -5,8 +5,14 @@
 	"main": "index.js",
 	"scripts": {
 		"pretest": "npm run lint",
+		"test": "npm run tests-only",
+		"posttest": "npx aud",
+		"tests-only": "npm run test:module && npm run test:shim",
+		"test:module": "node test",
+		"test:shim": "node test/shimmed",
+		"prelint": "evalmd *.md",
 		"lint": "eslint .",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"postlint": "es-shim-api --bound"
 	},
 	"repository": {
 		"type": "git",
@@ -30,8 +36,13 @@
 	},
 	"homepage": "https://github.com/es-shims/String.prototype.replaceAll#readme",
 	"devDependencies": {
+		"@es-shims/api": "^2.1.2",
 		"@ljharb/eslint-config": "^14.1.0",
-		"eslint": "^6.3.0"
+		"es5-shim": "^4.5.13",
+		"es6-shim": "^0.35.5",
+		"eslint": "^6.3.0",
+		"evalmd": "^0.0.19",
+		"functions-have-names": "^1.1.1"
 	},
 	"dependencies": {
 		"es-abstract": "^1.14.1",
