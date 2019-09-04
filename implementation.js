@@ -4,6 +4,7 @@ var ES = require('es-abstract/es2019');
 var GetIntrinsic = require('es-abstract/GetIntrinsic');
 var hasSymbols = require('has-symbols')();
 var bind = require('function-bind');
+var isRegex = require('is-regex');
 
 var max = GetIntrinsic('%Math%').max;
 var $TypeError = GetIntrinsic('%TypeError%');
@@ -31,6 +32,10 @@ function StringIndexOf(string, searchValue, fromIndex) {
 module.exports = function replaceAll(searchValue, replaceValue) {
 	var O = ES.RequireObjectCoercible(this);
 
+	if (isRegex(searchValue) && $indexOf($slice(searchValue, searchValue.source.length + 2), 'g') === -1) {
+		throw new TypeError('use .replace for a non-global regex. NOTE: this may be allowed in the future.');
+
+	}
 	if (searchValue != null && hasSymbols && Symbol.replace) {
 		var replacer = ES.GetMethod(searchValue, Symbol.replace);
 		if (typeof replacer !== 'undefined') {

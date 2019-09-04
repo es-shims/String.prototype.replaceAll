@@ -19,9 +19,8 @@ const replaceAll = require('string.prototype.replaceall');
 
 const str = 'aabc';
 
-// replaceAll and replace are the same, when given a regex to replace
+// replaceAll and replace are the same, when given a global regex to replace
 assert.equal(replaceAll(str, /a/g, 'z'), str.replace(/a/g, 'z'));
-assert.equal(replaceAll(str, /a/, 'z'), str.replace(/a/, 'z'));
 
 // replace, with a string, replaces once
 assert.equal(str.replace('a', 'z'), 'zabc');
@@ -31,9 +30,8 @@ assert.equal(replaceAll(str, 'a', 'z'), 'zzbc');
 
 replaceAll.shim(); // will be a no-op if not needed
 
-// replaceAll and replace are the same, when given a regex to replace
+// replaceAll and replace are the same, when given a global regex to replace
 assert.equal(str.replaceAll(/a/g, 'z'), str.replace(/a/g, 'z'));
-assert.equal(str.replaceAll(/a/, 'z'), str.replace(/a/, 'z'));
 
 // replace, with a string, replaces once
 assert.equal(str.replace('a', 'z'), 'zabc');

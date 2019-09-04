@@ -47,6 +47,7 @@
 	"dependencies": {
 		"es-abstract": "^1.14.1",
 		"function-bind": "^1.1.1",
-		"has-symbols": "^1.0.0"
+		"has-symbols": "^1.0.0",
+		"is-regex": "^1.0.4"
 	}
 }
