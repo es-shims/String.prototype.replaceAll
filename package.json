@@ -1,6 +1,6 @@
 {
 	"name": "string.prototype.replaceall",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Spec-compliant polyfill for String.prototype.replaceAll ESnext proposal",
 	"main": "index.js",
 	"scripts": {
