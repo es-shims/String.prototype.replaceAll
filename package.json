@@ -4,6 +4,8 @@
 	"description": "Spec-compliant polyfill for String.prototype.replaceAll ESnext proposal",
 	"main": "index.js",
 	"scripts": {
+		"version": "auto-changelog && git add CHANGELOG.md",
+		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\"",
 		"pretest": "npm run lint",
 		"test": "npm run tests-only",
 		"posttest": "npx aud",
@@ -38,6 +40,7 @@
 	"devDependencies": {
 		"@es-shims/api": "^2.1.2",
 		"@ljharb/eslint-config": "^14.1.0",
+		"auto-changelog": "^1.16.0",
 		"es5-shim": "^4.5.13",
 		"es6-shim": "^0.35.5",
 		"eslint": "^6.3.0",
@@ -49,5 +52,11 @@
 		"function-bind": "^1.1.1",
 		"has-symbols": "^1.0.0",
 		"is-regex": "^1.0.4"
+	},
+	"auto-changelog": {
+		"output": "CHANGELOG.md",
+		"unreleased": false,
+		"commitLimit": false,
+		"backfillLimit": false
 	}
 }
