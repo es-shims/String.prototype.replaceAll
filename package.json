@@ -57,6 +57,7 @@
 		"output": "CHANGELOG.md",
 		"unreleased": false,
 		"commitLimit": false,
-		"backfillLimit": false
+		"backfillLimit": false,
+		"template": "keepachangelog"
 	}
 }
