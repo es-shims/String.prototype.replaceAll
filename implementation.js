@@ -14,6 +14,7 @@ var $StringPrototype = GetIntrinsic('%StringPrototype%');
 var $push = bind.call(Function.call, $ArrayPrototype.push);
 var $slice = bind.call(Function.call, $StringPrototype.slice);
 var $indexOf = bind.call(Function.call, $StringPrototype.indexOf);
+var $replace = bind.call(Function.call, $StringPrototype.replace);
 
 // TODO: replace this with the es-abstract impl once it's merged and published
 // eslint-disable-next-line max-params, func-style
@@ -28,19 +29,24 @@ function StringIndexOf(string, searchValue, fromIndex) {
 	return $indexOf(string, searchValue, fromIndex);
 }
 
-// eslint-disable-next-line complexity, max-statements
+// eslint-disable-next-line complexity, max-statements, max-lines-per-function
 module.exports = function replaceAll(searchValue, replaceValue) {
 	var O = ES.RequireObjectCoercible(this);
 
-	if (isRegex(searchValue) && $indexOf($slice(searchValue, searchValue.source.length + 2), 'g') === -1) {
+	var searchValueIsRegex = isRegex(searchValue);
+	if (searchValueIsRegex && $indexOf($slice(searchValue, searchValue.source.length + 2), 'g') === -1) {
 		throw new TypeError('use .replace for a non-global regex. NOTE: this may be allowed in the future.');
 
 	}
-	if (searchValue != null && hasSymbols && Symbol.replace) {
-		var replacer = ES.GetMethod(searchValue, Symbol.replace);
-		if (typeof replacer !== 'undefined') {
-			return ES.Call(replacer, searchValue, [O, replaceValue]);
+	if (hasSymbols && Symbol.replace) {
+		if (searchValue != null) {
+			var replacer = ES.GetMethod(searchValue, Symbol.replace);
+			if (typeof replacer !== 'undefined') {
+				return ES.Call(replacer, searchValue, [O, replaceValue]);
+			}
 		}
+	} else if (searchValueIsRegex) {
+		return $replace(O, searchValue, replaceValue);
 	}
 
 	var string = ES.ToString(O);
