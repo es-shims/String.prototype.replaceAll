@@ -24,7 +24,14 @@ function StringIndexOf(string, searchValue, fromIndex) {
 		throw new $TypeError('Assertion failed: fromIndex must be a nonnegative integer');
 	}
 
-	return $indexOf(string, searchValue, fromIndex);
+	var searchLen = searchValue.length;
+
+	for (var i = fromIndex; i < string.length; i += 1) {
+		if (searchValue === '' || $slice(string, i, i + searchLen) === searchValue) {
+			return i;
+		}
+	}
+	return -1;
 }
 
 // eslint-disable-next-line complexity, max-statements, max-lines-per-function
@@ -52,6 +59,11 @@ module.exports = function replaceAll(searchValue, replaceValue) {
 	var functionalReplace = ES.IsCallable(replaceValue);
 	if (!functionalReplace) {
 		replaceValue = ES.ToString(replaceValue); // eslint-disable-line no-param-reassign
+	}
+
+	// TODO: this may be a workaround for broken spec text; see https://github.com/tc39/proposal-string-replaceall/issues/32
+	if (searchString === '') {
+		return $replace(string, /(?:)/g, replaceValue);
 	}
 
 	var searchLength = searchString.length;
