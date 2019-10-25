@@ -2,19 +2,17 @@
 
 var ES = require('es-abstract/es2019');
 var GetIntrinsic = require('es-abstract/GetIntrinsic');
+var callBound = require('es-abstract/helpers/callBound');
 var hasSymbols = require('has-symbols')();
-var bind = require('function-bind');
 var isRegex = require('is-regex');
 
-var max = GetIntrinsic('%Math%').max;
+var max = GetIntrinsic('%Math.max%');
 var $TypeError = GetIntrinsic('%TypeError%');
-var $ArrayPrototype = GetIntrinsic('%ArrayPrototype%');
-var $StringPrototype = GetIntrinsic('%StringPrototype%');
 
-var $push = bind.call(Function.call, $ArrayPrototype.push);
-var $slice = bind.call(Function.call, $StringPrototype.slice);
-var $indexOf = bind.call(Function.call, $StringPrototype.indexOf);
-var $replace = bind.call(Function.call, $StringPrototype.replace);
+var $push = callBound('Array.prototype.push');
+var $slice = callBound('String.prototype.slice');
+var $indexOf = callBound('String.prototype.indexOf');
+var $replace = callBound('String.prototype.replace');
 
 // TODO: replace this with the es-abstract impl once it's merged and published
 // eslint-disable-next-line max-params, func-style
