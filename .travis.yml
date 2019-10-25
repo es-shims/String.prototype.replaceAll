@@ -2,9 +2,10 @@ language: node_js
 os:
  - linux
 node_js:
-  - "12.9"
+  - "13.0"
+  - "12.13"
   - "11.15"
-  - "10.16"
+  - "10.17"
   - "9.11"
   - "8.16"
   - "7.10"
@@ -39,6 +40,14 @@ matrix:
       env: POSTTEST=true
     - node_js: "4"
       env: COVERAGE=true
+    - node_js: "12.12"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "12.11"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "12.10"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "12.9"
+      env: TEST=true ALLOW_FAILURE=true
     - node_js: "12.8"
       env: TEST=true ALLOW_FAILURE=true
     - node_js: "12.7"
@@ -86,6 +95,8 @@ matrix:
     - node_js: "11.1"
       env: TEST=true ALLOW_FAILURE=true
     - node_js: "11.0"
+      env: TEST=true ALLOW_FAILURE=true
+    - node_js: "10.16"
       env: TEST=true ALLOW_FAILURE=true
     - node_js: "10.15"
       env: TEST=true ALLOW_FAILURE=true
