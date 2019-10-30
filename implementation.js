@@ -31,9 +31,20 @@ function StringIndexOf(string, searchValue, fromIndex) {
 		throw new $TypeError('Assertion failed: fromIndex must be a nonnegative integer');
 	}
 
+	var len = string.length;
+
+	if (searchValue === '' && fromIndex <= len) {
+		return fromIndex;
+	}
+
 	var searchLen = searchValue.length;
 
-	for (var i = fromIndex; i < string.length; i += 1) {
+	// Note 2 of https://tc39.es/ecma262/#sec-stringindexof
+	if (fromIndex > len) {
+		return -1;
+	}
+
+	for (var i = fromIndex; i < len; i += 1) {
 		if (searchValue === '' || $slice(string, i, i + searchLen) === searchValue) {
 			return i;
 		}
@@ -66,11 +77,6 @@ module.exports = function replaceAll(searchValue, replaceValue) {
 	var functionalReplace = IsCallable(replaceValue);
 	if (!functionalReplace) {
 		replaceValue = ToString(replaceValue); // eslint-disable-line no-param-reassign
-	}
-
-	// TODO: this may be a workaround for broken spec text; see https://github.com/tc39/proposal-string-replaceall/issues/32
-	if (searchString === '') {
-		return $replace(string, /(?:)/g, replaceValue);
 	}
 
 	var searchLength = searchString.length;
