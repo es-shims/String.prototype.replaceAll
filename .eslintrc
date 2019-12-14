@@ -4,6 +4,7 @@
 	"rules": {
 		"array-bracket-newline": 0,
 		"eqeqeq": [2, "always", { "null": "ignore" }],
+		"id-length": 1,
 		"max-len": 0,
 		"new-cap": [2, { "capIsNewExceptions": ["Call", "GetIntrinsic", "GetMethod", "GetSubstitution", "IsCallable", "IsInteger", "RequireObjectCoercible", "StringIndexOf", "ToString", "Type"] }],
 	},

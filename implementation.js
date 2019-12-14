@@ -1,6 +1,13 @@
 'use strict';
 
-var ES = require('es-abstract/es2019');
+var Call = require('es-abstract/2019/Call');
+var GetMethod = require('es-abstract/2019/GetMethod');
+var GetSubstitution = require('es-abstract/2019/GetSubstitution');
+var IsCallable = require('es-abstract/2019/IsCallable');
+var IsInteger = require('es-abstract/2019/IsInteger');
+var RequireObjectCoercible = require('es-abstract/2019/RequireObjectCoercible');
+var ToString = require('es-abstract/2019/ToString');
+var Type = require('es-abstract/2019/Type');
 var GetIntrinsic = require('es-abstract/GetIntrinsic');
 var callBound = require('es-abstract/helpers/callBound');
 var hasSymbols = require('has-symbols')();
@@ -14,13 +21,13 @@ var $slice = callBound('String.prototype.slice');
 var $indexOf = callBound('String.prototype.indexOf');
 var $replace = callBound('String.prototype.replace');
 
-// TODO: replace this with the es-abstract impl once it's merged and published
+// TODO: replace this with the es-abstract 2020 impl once it's merged and published
 // eslint-disable-next-line max-params, func-style
 function StringIndexOf(string, searchValue, fromIndex) {
-	if (ES.Type(string) !== 'String' || ES.Type(searchValue) !== 'String') {
+	if (Type(string) !== 'String' || Type(searchValue) !== 'String') {
 		throw new $TypeError('Assertion failed: string and searchValue must both be Strings');
 	}
-	if (!ES.IsInteger(fromIndex) || fromIndex < 0) {
+	if (!IsInteger(fromIndex) || fromIndex < 0) {
 		throw new $TypeError('Assertion failed: fromIndex must be a nonnegative integer');
 	}
 
@@ -36,7 +43,7 @@ function StringIndexOf(string, searchValue, fromIndex) {
 
 // eslint-disable-next-line complexity, max-statements, max-lines-per-function
 module.exports = function replaceAll(searchValue, replaceValue) {
-	var O = ES.RequireObjectCoercible(this);
+	var O = RequireObjectCoercible(this);
 
 	var searchValueIsRegex = isRegex(searchValue);
 	if (searchValueIsRegex && $indexOf($slice(searchValue, searchValue.source.length + 2), 'g') === -1) {
@@ -45,20 +52,20 @@ module.exports = function replaceAll(searchValue, replaceValue) {
 	}
 	if (hasSymbols && Symbol.replace) {
 		if (searchValue != null) {
-			var replacer = ES.GetMethod(searchValue, Symbol.replace);
+			var replacer = GetMethod(searchValue, Symbol.replace);
 			if (typeof replacer !== 'undefined') {
-				return ES.Call(replacer, searchValue, [O, replaceValue]);
+				return Call(replacer, searchValue, [O, replaceValue]);
 			}
 		}
 	} else if (searchValueIsRegex) {
 		return $replace(O, searchValue, replaceValue);
 	}
 
-	var string = ES.ToString(O);
-	var searchString = ES.ToString(searchValue);
-	var functionalReplace = ES.IsCallable(replaceValue);
+	var string = ToString(O);
+	var searchString = ToString(searchValue);
+	var functionalReplace = IsCallable(replaceValue);
 	if (!functionalReplace) {
-		replaceValue = ES.ToString(replaceValue); // eslint-disable-line no-param-reassign
+		replaceValue = ToString(replaceValue); // eslint-disable-line no-param-reassign
 	}
 
 	// TODO: this may be a workaround for broken spec text; see https://github.com/tc39/proposal-string-replaceall/issues/32
@@ -81,13 +88,13 @@ module.exports = function replaceAll(searchValue, replaceValue) {
 	for (var i = 0; i < matchPositions.length; i += 1) {
 		var replacement;
 		if (functionalReplace) {
-			replacement = ES.ToString(ES.Call(replaceValue, undefined, [searchString, matchPositions[i], string]));
+			replacement = ToString(Call(replaceValue, undefined, [searchString, matchPositions[i], string]));
 		} else {
-			if (ES.Type(replaceValue) !== 'String') {
+			if (Type(replaceValue) !== 'String') {
 				throw new $TypeError('Assertion failed: `replaceValue` should be a string at this point');
 			}
 			var captures = [];
-			replacement = ES.GetSubstitution(searchString, string, matchPositions[i], captures, undefined, replaceValue);
+			replacement = GetSubstitution(searchString, string, matchPositions[i], captures, undefined, replaceValue);
 		}
 		var stringSlice = $slice(string, endOfLastMatch, matchPositions[i]);
 		result += stringSlice + replacement;
