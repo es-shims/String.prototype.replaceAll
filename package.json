@@ -4,17 +4,16 @@
 	"description": "Spec-compliant polyfill for String.prototype.replaceAll ESnext proposal",
 	"main": "index.js",
 	"scripts": {
-		"version": "auto-changelog && git add CHANGELOG.md",
-		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\"",
+		"prepublish": "safe-publish-latest",
 		"pretest": "npm run lint",
 		"test": "npm run tests-only",
 		"posttest": "npx aud",
-		"tests-only": "npm run test:module && npm run test:shim",
-		"test:module": "node test",
-		"test:shim": "node test/shimmed",
+		"tests-only": "tape 'test/*'",
 		"prelint": "evalmd *.md",
 		"lint": "eslint .",
-		"postlint": "es-shim-api --bound"
+		"postlint": "es-shim-api --bound",
+		"version": "auto-changelog && git add CHANGELOG.md",
+		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
 	},
 	"repository": {
 		"type": "git",
@@ -42,13 +41,15 @@
 	"homepage": "https://github.com/es-shims/String.prototype.replaceAll#readme",
 	"devDependencies": {
 		"@es-shims/api": "^2.1.2",
-		"@ljharb/eslint-config": "^15.0.2",
+		"@ljharb/eslint-config": "^16.0.0",
 		"auto-changelog": "^1.16.2",
 		"es5-shim": "^4.5.13",
 		"es6-shim": "^0.35.5",
-		"eslint": "^6.7.2",
+		"eslint": "^6.8.0",
 		"evalmd": "^0.0.19",
-		"functions-have-names": "^1.2.0"
+		"functions-have-names": "^1.2.1",
+		"safe-publish-latest": "^1.1.4",
+		"tape": "^5.0.0-next.4"
 	},
 	"dependencies": {
 		"define-properties": "^1.1.3",

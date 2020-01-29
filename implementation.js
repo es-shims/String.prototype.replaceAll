@@ -22,7 +22,7 @@ var $indexOf = callBound('String.prototype.indexOf');
 var $replace = callBound('String.prototype.replace');
 
 // TODO: replace this with the es-abstract 2020 impl once it's merged and published
-// eslint-disable-next-line max-params, func-style
+// eslint-disable-next-line func-style
 function StringIndexOf(string, searchValue, fromIndex) {
 	if (Type(string) !== 'String' || Type(searchValue) !== 'String') {
 		throw new $TypeError('Assertion failed: string and searchValue must both be Strings');
@@ -41,7 +41,7 @@ function StringIndexOf(string, searchValue, fromIndex) {
 	return -1;
 }
 
-// eslint-disable-next-line complexity, max-statements, max-lines-per-function
+// eslint-disable-next-line max-statements, max-lines-per-function
 module.exports = function replaceAll(searchValue, replaceValue) {
 	var O = RequireObjectCoercible(this);
 
