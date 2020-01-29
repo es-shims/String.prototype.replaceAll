@@ -7,7 +7,7 @@ replaceAllShim.shim();
 
 var test = require('tape');
 var defineProperties = require('define-properties');
-var bind = require('function-bind');
+var callBind = require('es-abstract/helpers/callBind');
 
 var isEnumerable = Object.prototype.propertyIsEnumerable;
 var functionsHaveNames = require('functions-have-names')();
@@ -27,7 +27,7 @@ test('shimmed', function (t) {
 	});
 
 	runTests(
-		bind.call(Function.call, String.prototype.replaceAll),
+		callBind(String.prototype.replaceAll),
 		t
 	);
 
