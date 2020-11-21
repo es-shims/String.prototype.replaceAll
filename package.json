@@ -8,7 +8,7 @@
 		"pretest": "npm run lint",
 		"test": "npm run tests-only",
 		"posttest": "npx aud --production",
-		"tests-only": "tape 'test/*'",
+		"tests-only": "nyc tape 'test/**/*.js'",
 		"prelint": "evalmd *.md",
 		"lint": "eslint .",
 		"postlint": "es-shim-api --bound",
@@ -49,6 +49,7 @@
 		"eslint": "^6.8.0",
 		"evalmd": "^0.0.19",
 		"functions-have-names": "^1.2.1",
+		"nyc": "^10.3.2",
 		"safe-publish-latest": "^1.1.4",
 		"tape": "^5.0.0-next.5"
 	},
