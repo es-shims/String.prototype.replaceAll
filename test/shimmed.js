@@ -7,7 +7,7 @@ replaceAllShim.shim();
 
 var test = require('tape');
 var defineProperties = require('define-properties');
-var callBind = require('es-abstract/helpers/callBind');
+var callBind = require('call-bind');
 
 var isEnumerable = Object.prototype.propertyIsEnumerable;
 var functionsHaveNames = require('functions-have-names')();

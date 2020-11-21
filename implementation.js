@@ -1,15 +1,15 @@
 'use strict';
 
-var Call = require('es-abstract/2019/Call');
-var GetMethod = require('es-abstract/2019/GetMethod');
-var GetSubstitution = require('es-abstract/2019/GetSubstitution');
-var IsCallable = require('es-abstract/2019/IsCallable');
-var IsInteger = require('es-abstract/2019/IsInteger');
-var RequireObjectCoercible = require('es-abstract/2019/RequireObjectCoercible');
-var ToString = require('es-abstract/2019/ToString');
-var Type = require('es-abstract/2019/Type');
-var GetIntrinsic = require('es-abstract/GetIntrinsic');
-var callBound = require('es-abstract/helpers/callBound');
+var Call = require('es-abstract/2020/Call');
+var GetMethod = require('es-abstract/2020/GetMethod');
+var GetSubstitution = require('es-abstract/2020/GetSubstitution');
+var IsCallable = require('es-abstract/2020/IsCallable');
+var IsInteger = require('es-abstract/2020/IsInteger');
+var RequireObjectCoercible = require('es-abstract/2020/RequireObjectCoercible');
+var ToString = require('es-abstract/2020/ToString');
+var Type = require('es-abstract/2020/Type');
+var GetIntrinsic = require('get-intrinsic');
+var callBound = require('call-bind/callBound');
 var hasSymbols = require('has-symbols')();
 var isRegex = require('is-regex');
 
@@ -21,7 +21,7 @@ var $slice = callBound('String.prototype.slice');
 var $indexOf = callBound('String.prototype.indexOf');
 var $replace = callBound('String.prototype.replace');
 
-// TODO: replace this with the es-abstract 2020 impl once it's merged and published
+// TODO: replace this with the es-abstract 2021 impl once it's merged and published
 // eslint-disable-next-line func-style
 function StringIndexOf(string, searchValue, fromIndex) {
 	if (Type(string) !== 'String' || Type(searchValue) !== 'String') {
