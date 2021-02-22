@@ -1,6 +1,5 @@
 # string.prototype.replaceall <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
 
-[![Build Status][travis-svg]][travis-url]
 [![dependency status][deps-svg]][deps-url]
 [![dev dependency status][dev-deps-svg]][dev-deps-url]
 [![License][license-image]][license-url]
@@ -44,15 +43,13 @@ assert.equal(str.replaceAll('a', 'z'), 'zzbc');
 Simply clone the repo, `npm install`, and run `npm test`
 
 [package-url]: https://npmjs.com/package/string.prototype.replaceall
-[npm-version-svg]: http://versionbadg.es/es-shims/String.prototype.replaceAll.svg
-[travis-svg]: https://travis-ci.org/es-shims/String.prototype.replaceAll.svg
-[travis-url]: https://travis-ci.org/es-shims/String.prototype.replaceAll
+[npm-version-svg]: https://versionbadg.es/es-shims/String.prototype.replaceAll.svg
 [deps-svg]: https://david-dm.org/es-shims/String.prototype.replaceAll.svg
 [deps-url]: https://david-dm.org/es-shims/String.prototype.replaceAll
 [dev-deps-svg]: https://david-dm.org/es-shims/String.prototype.replaceAll/dev-status.svg
 [dev-deps-url]: https://david-dm.org/es-shims/String.prototype.replaceAll#info=devDependencies
 [npm-badge-png]: https://nodei.co/npm/string.prototype.replaceall.png?downloads=true&stars=true
-[license-image]: http://img.shields.io/npm/l/string.prototype.replaceall.svg
+[license-image]: https://img.shields.io/npm/l/string.prototype.replaceall.svg
 [license-url]: LICENSE
-[downloads-image]: http://img.shields.io/npm/dm/string.prototype.replaceall.svg
-[downloads-url]: http://npm-stat.com/charts.html?package=string.prototype.replaceall
+[downloads-image]: https://img.shields.io/npm/dm/string.prototype.replaceall.svg
+[downloads-url]: https://npm-stat.com/charts.html?package=string.prototype.replaceall
