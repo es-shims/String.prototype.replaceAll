@@ -47,12 +47,12 @@
 		"auto-changelog": "^2.2.1",
 		"es5-shim": "^4.5.15",
 		"es6-shim": "^0.35.6",
-		"eslint": "^7.20.0",
+		"eslint": "^7.24.0",
 		"evalmd": "^0.0.19",
 		"functions-have-names": "^1.2.2",
 		"nyc": "^10.3.2",
 		"safe-publish-latest": "^1.1.4",
-		"tape": "^5.2.0"
+		"tape": "^5.2.2"
 	},
 	"dependencies": {
 		"call-bind": "^1.0.2",
