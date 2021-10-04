@@ -1,13 +1,13 @@
 'use strict';
 
-var Call = require('es-abstract/2020/Call');
-var GetMethod = require('es-abstract/2020/GetMethod');
-var GetSubstitution = require('es-abstract/2020/GetSubstitution');
-var IsCallable = require('es-abstract/2020/IsCallable');
-var IsInteger = require('es-abstract/2020/IsInteger');
-var RequireObjectCoercible = require('es-abstract/2020/RequireObjectCoercible');
-var ToString = require('es-abstract/2020/ToString');
-var Type = require('es-abstract/2020/Type');
+var Call = require('es-abstract/2021/Call');
+var GetMethod = require('es-abstract/2021/GetMethod');
+var GetSubstitution = require('es-abstract/2021/GetSubstitution');
+var IsCallable = require('es-abstract/2021/IsCallable');
+var RequireObjectCoercible = require('es-abstract/2021/RequireObjectCoercible');
+var ToString = require('es-abstract/2021/ToString');
+var StringIndexOf = require('es-abstract/2021/StringIndexOf');
+var Type = require('es-abstract/2021/Type');
 var GetIntrinsic = require('get-intrinsic');
 var callBound = require('call-bind/callBound');
 var hasSymbols = require('has-symbols')();
@@ -20,37 +20,6 @@ var $push = callBound('Array.prototype.push');
 var $slice = callBound('String.prototype.slice');
 var $indexOf = callBound('String.prototype.indexOf');
 var $replace = callBound('String.prototype.replace');
-
-// TODO: replace this with the es-abstract 2021 impl once it's merged and published
-// eslint-disable-next-line func-style
-function StringIndexOf(string, searchValue, fromIndex) {
-	if (Type(string) !== 'String' || Type(searchValue) !== 'String') {
-		throw new $TypeError('Assertion failed: string and searchValue must both be Strings');
-	}
-	if (!IsInteger(fromIndex) || fromIndex < 0) {
-		throw new $TypeError('Assertion failed: fromIndex must be a nonnegative integer');
-	}
-
-	var len = string.length;
-
-	if (searchValue === '' && fromIndex <= len) {
-		return fromIndex;
-	}
-
-	var searchLen = searchValue.length;
-
-	// Note 2 of https://tc39.es/ecma262/#sec-stringindexof
-	if (fromIndex > len) {
-		return -1;
-	}
-
-	for (var i = fromIndex; i < len; i += 1) {
-		if (searchValue === '' || $slice(string, i, i + searchLen) === searchValue) {
-			return i;
-		}
-	}
-	return -1;
-}
 
 // eslint-disable-next-line max-statements, max-lines-per-function
 module.exports = function replaceAll(searchValue, replaceValue) {
