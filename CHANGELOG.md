@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.6](https://github.com/es-shims/String.prototype.replaceAll/compare/v1.0.5...v1.0.6) - 2021-10-04
+
+### Commits
+
+- [Deps] update `es-abstract` [`823d403`](https://github.com/es-shims/String.prototype.replaceAll/commit/823d403d0226e0a6eee4426e9daabdc27ef287af)
+- [actions] use `node/install` instead of `node/run`; use `codecov` action [`23b0615`](https://github.com/es-shims/String.prototype.replaceAll/commit/23b06153625f70ec9f11b7fec938d97aabd93304)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `@es-shims/api`, `aud`, `auto-changelog`, `es5-shim`, `tape` [`f0f4be9`](https://github.com/es-shims/String.prototype.replaceAll/commit/f0f4be9ea715eeb24e8f53e2666505198de4eca4)
+- [meta] add FUNDING.yml [`392afd7`](https://github.com/es-shims/String.prototype.replaceAll/commit/392afd7c543da9da3da18302e16ac1152baac298)
+- [readme] add github actions/codecov badges [`e01952a`](https://github.com/es-shims/String.prototype.replaceAll/commit/e01952adde43f1f9ef4a62fae110b0bd267902f3)
+- [Deps] update `es-abstract`, `is-regex` [`f763b3b`](https://github.com/es-shims/String.prototype.replaceAll/commit/f763b3b221a16e378df4f0155e59dcf292adbe5c)
+- [Deps] update `es-abstract`, `has-symbols` [`35cfd7a`](https://github.com/es-shims/String.prototype.replaceAll/commit/35cfd7a57236ea86a54aa8679c5c513d65f40be3)
+- [Dev Deps] update `eslint`, `tape` [`d066e34`](https://github.com/es-shims/String.prototype.replaceAll/commit/d066e342cc87266cb933d48001ed0051e74aac5a)
+- [actions] update workflows [`c592b5d`](https://github.com/es-shims/String.prototype.replaceAll/commit/c592b5d690ebcfc755aeab647914817faaab5703)
+- [meta] use `prepublishOnly` script for npm 7+ [`bb345fd`](https://github.com/es-shims/String.prototype.replaceAll/commit/bb345fd8b2f9a4f6a0a494f2ec07da5b69cd0811)
+- [Dev Deps] update `@es-shims/api` [`4050d23`](https://github.com/es-shims/String.prototype.replaceAll/commit/4050d237e6bc4123c1dda4efc925334521d75ea7)
+
 ## [v1.0.5](https://github.com/es-shims/String.prototype.replaceAll/compare/v1.0.4...v1.0.5) - 2021-02-22
 
 ### Commits
