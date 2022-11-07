@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.7](https://github.com/es-shims/String.prototype.replaceAll/compare/v1.0.6...v1.0.7) - 2022-11-07
+
+### Commits
+
+- [actions] reuse common workflows [`4bbf1bc`](https://github.com/es-shims/String.prototype.replaceAll/commit/4bbf1bc8d095ef7ee1c64300eb2c3b516efb8d41)
+- [meta] use `npmignore` to autogenerate an npmignore file [`c9a5e01`](https://github.com/es-shims/String.prototype.replaceAll/commit/c9a5e0107cab4ec0c611e5ce0312dffe5805653d)
+- [Deps] update `define-properties`, `es-abstract`, `get-intrinsic`, `has-symbols` [`6a559a7`](https://github.com/es-shims/String.prototype.replaceAll/commit/6a559a7ebd926c3756076a65bfdfb8dd50e62dbe)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `@es-shims/api`, `safe-publish-latest`, `tape` [`02e98d1`](https://github.com/es-shims/String.prototype.replaceAll/commit/02e98d1b9b8a170b6753e6e4004aea0ca841bc43)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `auto-changelog`, `es5-shim`, `functions-have-names`, `tape` [`bf0084f`](https://github.com/es-shims/String.prototype.replaceAll/commit/bf0084fa414f9930a87f7e178a1cf2ca0f38c220)
+- [actions] update rebase action to use reusable workflow [`ce0e8b7`](https://github.com/es-shims/String.prototype.replaceAll/commit/ce0e8b7f61220e12557e3997c1e30f5d4413c01d)
+- [actions] update codecov uploader [`952e5b3`](https://github.com/es-shims/String.prototype.replaceAll/commit/952e5b3209e1b1ac0cad06e1385ae0e823fb4e01)
+
 ## [v1.0.6](https://github.com/es-shims/String.prototype.replaceAll/compare/v1.0.5...v1.0.6) - 2021-10-04
 
 ### Commits
