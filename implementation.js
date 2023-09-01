@@ -1,13 +1,13 @@
 'use strict';
 
-var Call = require('es-abstract/2022/Call');
-var GetMethod = require('es-abstract/2022/GetMethod');
-var GetSubstitution = require('es-abstract/2022/GetSubstitution');
-var IsCallable = require('es-abstract/2022/IsCallable');
-var RequireObjectCoercible = require('es-abstract/2022/RequireObjectCoercible');
-var ToString = require('es-abstract/2022/ToString');
-var StringIndexOf = require('es-abstract/2022/StringIndexOf');
-var Type = require('es-abstract/2022/Type');
+var Call = require('es-abstract/2023/Call');
+var GetMethod = require('es-abstract/2023/GetMethod');
+var GetSubstitution = require('es-abstract/2023/GetSubstitution');
+var IsCallable = require('es-abstract/2023/IsCallable');
+var RequireObjectCoercible = require('es-abstract/2023/RequireObjectCoercible');
+var ToString = require('es-abstract/2023/ToString');
+var StringIndexOf = require('es-abstract/2023/StringIndexOf');
+var Type = require('es-abstract/2023/Type');
 var GetIntrinsic = require('get-intrinsic');
 var callBound = require('call-bind/callBound');
 var hasSymbols = require('has-symbols')();
