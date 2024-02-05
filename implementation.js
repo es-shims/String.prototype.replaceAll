@@ -14,7 +14,7 @@ var hasSymbols = require('has-symbols')();
 var isRegex = require('is-regex');
 
 var max = GetIntrinsic('%Math.max%');
-var $TypeError = GetIntrinsic('%TypeError%');
+var $TypeError = require('es-errors/type');
 
 var $push = callBound('Array.prototype.push');
 var $slice = callBound('String.prototype.slice');
@@ -27,7 +27,7 @@ module.exports = function replaceAll(searchValue, replaceValue) {
 
 	var searchValueIsRegex = isRegex(searchValue);
 	if (searchValueIsRegex && $indexOf($slice(searchValue, searchValue.source.length + 2), 'g') === -1) {
-		throw new TypeError('use .replace for a non-global regex. NOTE: this may be allowed in the future.');
+		throw new $TypeError('use .replace for a non-global regex. NOTE: this may be allowed in the future.');
 
 	}
 	if (hasSymbols && Symbol.replace) {
