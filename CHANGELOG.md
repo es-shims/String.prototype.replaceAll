@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.9](https://github.com/es-shims/String.prototype.replaceAll/compare/v1.0.8...v1.0.9) - 2024-02-04
+
+### Commits
+
+- [Deps] update `call-bind`, `define-properties`, `es-abstract`, `get-intrinsic` [`9afaf70`](https://github.com/es-shims/String.prototype.replaceAll/commit/9afaf709ff8d2d43378fc8772dfc1bc7e17a99c3)
+- [Dev Deps] update `aud`, `npmignore`, `tape` [`ca2421a`](https://github.com/es-shims/String.prototype.replaceAll/commit/ca2421a9c7f3d62fac38d19066fb7a2e68de96bc)
+- [Refactor] use `es-errors` where possible, so things that only need those do not need `get-intrinsic` [`fdad745`](https://github.com/es-shims/String.prototype.replaceAll/commit/fdad74599d52fab1745033767aa27772f60d846a)
+
 ## [v1.0.8](https://github.com/es-shims/String.prototype.replaceAll/compare/v1.0.7...v1.0.8) - 2023-09-03
 
 ### Commits
