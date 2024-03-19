@@ -4,10 +4,10 @@ var Call = require('es-abstract/2023/Call');
 var GetMethod = require('es-abstract/2023/GetMethod');
 var GetSubstitution = require('es-abstract/2023/GetSubstitution');
 var IsCallable = require('es-abstract/2023/IsCallable');
-var RequireObjectCoercible = require('es-abstract/2023/RequireObjectCoercible');
+var RequireObjectCoercible = require('es-object-atoms/RequireObjectCoercible');
 var ToString = require('es-abstract/2023/ToString');
 var StringIndexOf = require('es-abstract/2023/StringIndexOf');
-var Type = require('es-abstract/2023/Type');
+
 var GetIntrinsic = require('get-intrinsic');
 var callBound = require('call-bind/callBound');
 var hasSymbols = require('has-symbols')();
@@ -65,7 +65,7 @@ module.exports = function replaceAll(searchValue, replaceValue) {
 		if (functionalReplace) {
 			replacement = ToString(Call(replaceValue, undefined, [searchString, matchPositions[i], string]));
 		} else {
-			if (Type(replaceValue) !== 'String') {
+			if (typeof replaceValue !== 'string') {
 				throw new $TypeError('Assertion failed: `replaceValue` should be a string at this point');
 			}
 			var captures = [];
