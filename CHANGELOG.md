@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.10](https://github.com/es-shims/String.prototype.replaceAll/compare/v1.0.9...v1.0.10) - 2024-03-19
+
+### Commits
+
+- [Deps] update `call-bind`, `es-abstract`, `es-errors`, `get-intrinsic` [`769d1cf`](https://github.com/es-shims/String.prototype.replaceAll/commit/769d1cf2ee05915f9a666f7ad55dbd60eebf99e0)
+- [actions] remove redundant finisher [`74bfab2`](https://github.com/es-shims/String.prototype.replaceAll/commit/74bfab2b3b63b406677b725b685e0b62e1ae6914)
+- [Refactor] use `es-object-atoms` where possible [`6696151`](https://github.com/es-shims/String.prototype.replaceAll/commit/6696151c0b5ffd8374a0f8fcc5872ddc7eff894e)
+- [meta] add missing `engines.node` [`e38cb2b`](https://github.com/es-shims/String.prototype.replaceAll/commit/e38cb2b68328349e689a0ac996298e027ec4570d)
+- [Dev Deps] update `tape` [`784df8c`](https://github.com/es-shims/String.prototype.replaceAll/commit/784df8c7f611a1f09db5b59e4cc2beaa1b0cfb3d)
+
 ## [v1.0.9](https://github.com/es-shims/String.prototype.replaceAll/compare/v1.0.8...v1.0.9) - 2024-02-04
 
 ### Commits
