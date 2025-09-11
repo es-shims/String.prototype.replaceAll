@@ -9,7 +9,7 @@
 		"prepublishOnly": "safe-publish-latest",
 		"pretest": "npm run lint",
 		"test": "npm run tests-only",
-		"posttest": "aud --production",
+		"posttest": "npx npm@\">= 10.2\" audit --production",
 		"tests-only": "nyc tape 'test/**/*.js'",
 		"prelint": "evalmd *.md",
 		"lint": "eslint --ext=js,mjs .",
@@ -44,7 +44,6 @@
 	"devDependencies": {
 		"@es-shims/api": "^2.4.2",
 		"@ljharb/eslint-config": "^21.1.0",
-		"aud": "^2.0.4",
 		"auto-changelog": "^2.4.0",
 		"es5-shim": "^4.6.7",
 		"es6-shim": "^0.35.8",
