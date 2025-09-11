@@ -1,12 +1,12 @@
 'use strict';
 
-var Call = require('es-abstract/2024/Call');
-var GetMethod = require('es-abstract/2024/GetMethod');
-var GetSubstitution = require('es-abstract/2024/GetSubstitution');
-var IsCallable = require('es-abstract/2024/IsCallable');
+var Call = require('es-abstract/2025/Call');
+var GetMethod = require('es-abstract/2025/GetMethod');
+var GetSubstitution = require('es-abstract/2025/GetSubstitution');
+var IsCallable = require('es-abstract/2025/IsCallable');
 var RequireObjectCoercible = require('es-object-atoms/RequireObjectCoercible');
-var ToString = require('es-abstract/2024/ToString');
-var StringIndexOf = require('es-abstract/2024/StringIndexOf');
+var ToString = require('es-abstract/2025/ToString');
+var StringIndexOf = require('es-abstract/2025/StringIndexOf');
 
 var GetIntrinsic = require('get-intrinsic');
 var callBound = require('call-bind/callBound');
@@ -20,6 +20,8 @@ var $push = callBound('Array.prototype.push');
 var $slice = callBound('String.prototype.slice');
 var $indexOf = callBound('String.prototype.indexOf');
 var $replace = callBound('String.prototype.replace');
+
+// https://tc39.es/ecma262/#sec-string.prototype.replaceall
 
 // eslint-disable-next-line max-statements, max-lines-per-function
 module.exports = function replaceAll(searchValue, replaceValue) {
@@ -53,7 +55,7 @@ module.exports = function replaceAll(searchValue, replaceValue) {
 	var matchPositions = [];
 
 	var position = StringIndexOf(string, searchString, 0);
-	while (position !== -1) {
+	while (position !== 'NOT-FOUND') {
 		$push(matchPositions, position);
 		position = StringIndexOf(string, searchString, position + advanceBy);
 	}
