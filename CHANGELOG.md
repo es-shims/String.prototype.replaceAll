@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.11](https://github.com/es-shims/String.prototype.replaceAll/compare/v1.0.10...v1.0.11) - 2025-09-11
+
+### Commits
+
+- [Deps] update `call-bind`, `es-abstract`, `es-object-atoms`, `get-intrinsic`, `has-symbols`, `is-regex` [`42093cf`](https://github.com/es-shims/String.prototype.replaceAll/commit/42093cf783e701698bc248eac64ba24dbeed1556)
+- [Dev Deps] update `@es-shims/api`, `@ljharb/eslint-config`, `auto-changelog`, `tape` [`ead7f09`](https://github.com/es-shims/String.prototype.replaceAll/commit/ead7f0907c36bc66cc35b9409785555bbd6bc591)
+- [Tests] replace `aud` with `npm audit` [`12907f6`](https://github.com/es-shims/String.prototype.replaceAll/commit/12907f67c1725fcf397a7922f38e5f85732c7731)
+- [Dev Deps] add missing peer dep [`8c69aa5`](https://github.com/es-shims/String.prototype.replaceAll/commit/8c69aa5aac0f4acd0148c15d168ebc8d82065d23)
+
 ## [v1.0.10](https://github.com/es-shims/String.prototype.replaceAll/compare/v1.0.9...v1.0.10) - 2024-03-19
 
 ### Commits
